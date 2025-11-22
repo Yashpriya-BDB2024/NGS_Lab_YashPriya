@@ -1,0 +1,25 @@
+All statistics are based on contigs of size >= 500 bp, unless otherwise noted (e.g., "# contigs (>= 0 bp)" and "Total length (>= 0 bp)" include all contigs).
+
+Assembly                    GCA_000473375.1_Anop_culi_species_A-37_1_V1_genomic  GCF_013141755.1_UCI_ANSTEP_V1.0_genomic
+# contigs (>= 0 bp)         16162                                                494                                    
+# contigs (>= 1000 bp)      16162                                                494                                    
+# contigs (>= 5000 bp)      10115                                                492                                    
+# contigs (>= 10000 bp)     6350                                                 491                                    
+# contigs (>= 25000 bp)     2069                                                 476                                    
+# contigs (>= 50000 bp)     503                                                  298                                    
+Total length (>= 0 bp)      202998806                                            243460342                              
+Total length (>= 1000 bp)   202998806                                            243460342                              
+Total length (>= 5000 bp)   186778060                                            243455079                              
+Total length (>= 10000 bp)  159354431                                            243446368                              
+Total length (>= 25000 bp)  91824917                                             243124170                              
+Total length (>= 50000 bp)  38084885                                             236332780                              
+# contigs                   16162                                                494                                    
+Largest contig              390863                                               93706023                               
+Total length                202998806                                            243460342                              
+GC (%)                      42.68                                                44.92                                  
+N50                         22320                                                88747589                               
+N90                         5807                                                 126654                                 
+auN                         33358.9                                              70557273.2                             
+L50                         2479                                                 2                                      
+L90                         9357                                                 71                                     
+# N's per 100 kbp           7803.01                                              3.49                                   
