@@ -1,0 +1,106 @@
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: /home/ibab/NGS_Lab/ia1_exam/IA1/Bacterial_Genome_Assembly/raw_data/ERR027433_1.fastq.gz
+Trimming mode: paired-end
+Trim Galore version: 0.6.10
+Cutadapt version: 4.4
+Number of cores used for trimming: 1
+Quality Phred score cutoff: 20
+Quality encoding type selected: ASCII+33
+Using Illumina adapter for trimming (count: 6). Second best hit was Nextera (count: 0)
+Adapter sequence: 'AGATCGGAAGAGC' (Illumina TruSeq, Sanger iPCR; auto-detected)
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 1 bp
+Minimum required sequence length for both reads before a sequence pair gets removed: 20 bp
+Output file will be GZIP compressed
+
+
+This is cutadapt 4.4 with Python 3.12.3
+Command line parameters: -j 1 -e 0.1 -q 20 -O 1 -a AGATCGGAAGAGC /home/ibab/NGS_Lab/ia1_exam/IA1/Bacterial_Genome_Assembly/raw_data/ERR027433_1.fastq.gz
+Processing single-end reads on 1 core ...
+Finished in 3.862 s (11.600 µs/read; 5.17 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 332,941
+Reads with adapters:                    65,456 (19.7%)
+Reads written (passing filters):       332,941 (100.0%)
+
+Total basepairs processed:    17,978,814 bp
+Quality-trimmed:               1,506,115 bp (8.4%)
+Total written (filtered):     16,251,940 bp (90.4%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGC; Type: regular 3'; Length: 13; Trimmed: 65456 times
+
+Minimum overlap: 1
+No. of allowed errors:
+1-9 bp: 0; 10-13 bp: 1
+
+Bases preceding removed adapters:
+  A: 25.3%
+  C: 29.3%
+  G: 32.5%
+  T: 8.0%
+  none/other: 5.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+1	45271	83235.2	0	45271
+2	13901	20808.8	0	13901
+3	2057	5202.2	0	2057
+4	656	1300.6	0	656
+5	494	325.1	0	494
+6	235	81.3	0	235
+7	66	20.3	0	66
+8	5	5.1	0	5
+9	11	1.3	0	1 10
+10	29	0.3	1	0 29
+11	9	0.1	1	0 9
+12	1	0.0	1	0 1
+15	1	0.0	1	0 1
+16	2	0.0	1	0 2
+17	2	0.0	1	0 2
+18	3	0.0	1	1 2
+20	3	0.0	1	0 3
+21	5	0.0	1	0 5
+22	11	0.0	1	0 11
+23	7	0.0	1	0 7
+24	9	0.0	1	0 9
+25	15	0.0	1	0 15
+26	3	0.0	1	0 3
+27	1	0.0	1	0 1
+28	6	0.0	1	1 5
+29	6	0.0	1	0 6
+30	10	0.0	1	0 10
+31	4	0.0	1	0 4
+32	13	0.0	1	0 13
+33	51	0.0	1	0 51
+34	6	0.0	1	0 6
+35	28	0.0	1	0 28
+36	10	0.0	1	0 10
+37	8	0.0	1	0 8
+38	13	0.0	1	0 13
+39	72	0.0	1	0 72
+40	130	0.0	1	0 130
+41	71	0.0	1	0 71
+42	62	0.0	1	0 62
+43	47	0.0	1	0 47
+44	117	0.0	1	0 117
+45	72	0.0	1	0 72
+46	31	0.0	1	0 31
+47	11	0.0	1	0 11
+48	14	0.0	1	0 14
+49	25	0.0	1	0 25
+50	16	0.0	1	0 16
+51	22	0.0	1	0 22
+52	30	0.0	1	0 30
+53	179	0.0	1	0 179
+54	1605	0.0	1	0 1605
+
+RUN STATISTICS FOR INPUT FILE: /home/ibab/NGS_Lab/ia1_exam/IA1/Bacterial_Genome_Assembly/raw_data/ERR027433_1.fastq.gz
+=============================================
+332941 sequences processed in total
+
