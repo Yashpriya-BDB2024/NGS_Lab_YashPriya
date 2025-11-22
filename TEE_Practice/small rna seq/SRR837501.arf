@@ -1,0 +1,17 @@
+seq_2281_x9	26	1	26	ccccccactgctaaatttgactggct	chr20	26	18329073	18329098	ccccccactgctaaatttgactggct	+	0	mmmmmmmmmmmmmmmmmmmmmmmmmm
+seq_2317_x6	25	1	25	ccccccactgctaaatttgactggc	chr20	25	18329073	18329097	ccccccactgctaaatttgactggc	+	0	mmmmmmmmmmmmmmmmmmmmmmmmm
+seq_2332_x4	20	1	20	ctcctgtactgagctgcccc	chr20	20	10640254	10640273	ctcctgtactgagctgccac	-	1	mmmmmmmmmmmmmmmmmmMm
+seq_2343_x3	25	1	25	cccccactgctaaatttgactggct	chr20	25	17851791	17851815	cccccactgctaaatttgactggct	-	0	mmmmmmmmmmmmmmmmmmmmmmmmm
+seq_2343_x3	25	1	25	cccccactgctaaatttgactggct	chr20	25	18329074	18329098	cccccactgctaaatttgactggct	+	0	mmmmmmmmmmmmmmmmmmmmmmmmm
+seq_2387_x2	24	1	24	cccccactgctaaatttgactggc	chr20	24	17851792	17851815	cccccactgctaaatttgactggc	-	0	mmmmmmmmmmmmmmmmmmmmmmmm
+seq_2387_x2	24	1	24	cccccactgctaaatttgactggc	chr20	24	18329074	18329097	cccccactgctaaatttgactggc	+	0	mmmmmmmmmmmmmmmmmmmmmmmm
+seq_2403_x2	23	1	23	ccccccactgctaaatttgactg	chr20	23	18329073	18329095	ccccccactgctaaatttgactg	+	0	mmmmmmmmmmmmmmmmmmmmmmm
+seq_2413_x1	20	1	20	ctcccactgcttcacttgac	chr20	20	34384170	34384189	ctcccactgcttcacttgac	-	0	mmmmmmmmmmmmmmmmmmmm
+seq_2413_x1	20	1	20	ctcccactgcttcacttgac	chr20	20	16670650	16670669	ctcccactgcttcacttgac	-	0	mmmmmmmmmmmmmmmmmmmm
+seq_2417_x1	21	1	21	cttctcactactgcacttgac	chr20	21	30309024	30309044	cttctcactactgcacttgac	-	0	mmmmmmmmmmmmmmmmmmmmm
+seq_2417_x1	21	1	21	cttctcactactgcacttgac	chr20	21	5964621	5964641	cttctcactactgcacttgac	+	0	mmmmmmmmmmmmmmmmmmmmm
+seq_2451_x1	27	1	27	ccccccactgctaaatttgactggctt	chr20	27	18329073	18329099	ccccccactgctaaatttgactggctt	+	0	mmmmmmmmmmmmmmmmmmmmmmmmmmm
+seq_2460_x1	24	1	24	cttctcactactgcacttgactag	chr20	24	30309021	30309044	cttctcactactgcacttgacgag	-	1	mmmmmmmmmmmmmmmmmmmmmMmm
+seq_2460_x1	22	1	22	cttctcactactgcacttgact	chr20	22	5964621	5964642	cttctcactactgcacttgact	+	0	mmmmmmmmmmmmmmmmmmmmmm
+seq_2462_x1	20	1	20	cccccactgctaaatttgac	chr20	20	17851796	17851815	cccccactgctaaatttgac	-	0	mmmmmmmmmmmmmmmmmmmm
+seq_2462_x1	20	1	20	cccccactgctaaatttgac	chr20	20	18329074	18329093	cccccactgctaaatttgac	+	0	mmmmmmmmmmmmmmmmmmmm

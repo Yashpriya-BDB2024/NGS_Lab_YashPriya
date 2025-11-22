@@ -1,0 +1,69 @@
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: SRR837501_subread.fq
+Trimming mode: single-end
+Trim Galore version: 0.6.10
+Cutadapt version: 4.4
+Number of cores used for trimming: 1
+Quality Phred score cutoff: 20
+Quality encoding type selected: ASCII+33
+Unable to auto-detect most prominent adapter from the first specified file (count smallRNA: 0, count Nextera: 0, count Illumina: 0)
+Defaulting to Illumina universal adapter ( AGATCGGAAGAGC ). Specify -a SEQUENCE to avoid this behavior).
+Adapter sequence: 'AGATCGGAAGAGC' (Illumina TruSeq, Sanger iPCR; default (inconclusive auto-detection))
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 1 bp
+Minimum required sequence length before a sequence gets removed: 20 bp
+
+
+This is cutadapt 4.4 with Python 3.12.3
+Command line parameters: -j 1 -e 0.1 -q 20 -O 1 -a AGATCGGAAGAGC SRR837501_subread.fq
+Processing single-end reads on 1 core ...
+Finished in 0.007 s (2.881 µs/read; 20.82 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                   2,500
+Reads with adapters:                     2,135 (85.4%)
+Reads written (passing filters):         2,500 (100.0%)
+
+Total basepairs processed:        54,763 bp
+Quality-trimmed:                      31 bp (0.1%)
+Total written (filtered):         51,184 bp (93.5%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGC; Type: regular 3'; Length: 13; Trimmed: 2135 times
+
+Minimum overlap: 1
+No. of allowed errors:
+1-9 bp: 0; 10-13 bp: 1
+
+Bases preceding removed adapters:
+  A: 1.5%
+  C: 0.4%
+  G: 97.3%
+  T: 0.7%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by 'G' extremely often.
+    The provided adapter sequence could be incomplete at its 5' end.
+    Ignore this warning when trimming primers.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+1	931	625.0	0	931
+2	999	156.2	0	999
+3	201	39.1	0	201
+4	4	9.8	0	4
+
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+
+RUN STATISTICS FOR INPUT FILE: SRR837501_subread.fq
+=============================================
+2500 sequences processed in total
+Sequences removed because they became shorter than the length cutoff of 20 bp:	20 (0.8%)
+
