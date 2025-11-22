@@ -1,0 +1,84 @@
+name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+Paracoccus sp. SJTW-4	3078428	S	11	68	79	0.01400
+Paracoccus sp. AK26	2589076	S	10	15	25	0.00443
+Paracoccus sp. MA	2895796	S	10	55	65	0.01152
+Paracoccus yeei	147645	S	24	167	191	0.03386
+Paracoccus contaminans	1945662	S	15	29	44	0.00780
+Paracoccus liaowanqingii	2560053	S	14	13	27	0.00479
+Paracoccus aminovorans	34004	S	13	29	42	0.00745
+Paracoccus suum	2259340	S	13	22	35	0.00620
+Paracoccus sediminicola	3017783	S	11	33	44	0.00780
+Cereibacter sphaeroides	1063	S	45	101	146	0.02588
+Cereibacter azotoformans	43057	S	30	82	112	0.01985
+Tabrizicola sp. BL-A-41-H6	3421107	S	20	14	34	0.00603
+Tabrizicola sp. M-4	3055847	S	14	25	39	0.00691
+Tabrizicola piscis	2494374	S	15	24	39	0.00691
+Rhodovulum sp. P5	1564506	S	21	106	127	0.02251
+Pseudooceanicola sp. LIPI14-2-Ac024	3344875	S	16	25	41	0.00727
+Pseudooceanicola atlanticus	1461694	S	11	12	23	0.00408
+Limimaricola sp. AA108-03	3425945	S	16	25	41	0.00727
+Limimaricola variabilis	1492771	S	13	31	44	0.00780
+Yoonia vestfoldensis	245188	S	10	28	38	0.00674
+Pelagovum pacificum	2588711	S	22	27	49	0.00869
+Fuscovulum ytuae	3042299	S	21	26	47	0.00833
+Frigidibacter mobilis	1335048	S	21	85	106	0.01879
+Pukyongiella litopenaei	2605946	S	18	54	72	0.01276
+Pontivivens ytuae	2789856	S	14	11	25	0.00443
+Paroceanicella profunda	2579971	S	15	41	56	0.00993
+Gemmobacter fulvus	2840474	S	14	22	36	0.00638
+Haematobacter massiliensis	195105	S	14	69	83	0.01471
+Defluviimonas sp. SAOS-178_SWC	3121287	S	14	13	27	0.00479
+Tritonibacter mobilis	379347	S	10	62	72	0.01276
+Nioella sp.	1912091	S	12	9	21	0.00372
+Algicella marina	2683284	S	12	6	18	0.00319
+Pseudogemmobacter blasticus	1075	S	11	13	24	0.00425
+Pseudoroseicyclus sp. CXY001	3242492	S	11	14	25	0.00443
+Brevirhabdus pacifica	1267768	S	11	62	73	0.01294
+Pacificitalea manganoxidans	1411902	S	11	24	35	0.00620
+Qingshengfaniella alkalisoli	2599296	S	10	5	15	0.00266
+Amaricoccus sp. B4	3368557	S	10	13	23	0.00408
+Roseovarius sp. Pro17	3108175	S	10	15	25	0.00443
+Roseovarius tolerans	74031	S	12	15	27	0.00479
+Roseovarius indicus	540747	S	10	31	41	0.00727
+Roseivivax marinus	1379903	S	15	25	40	0.00709
+Jannaschia sp. W003	2867012	S	13	18	31	0.00550
+Jannaschia sp. M317	2867011	S	11	8	19	0.00337
+Jannaschia ovalis	3038773	S	24	37	61	0.01081
+Salipiger profundus	1229727	S	16	74	90	0.01595
+Salipiger sp. CCB-MM3	1792508	S	14	18	32	0.00567
+Salipiger abyssi	1250539	S	12	53	65	0.01152
+Palleronia sp. THAF1	2587842	S	22	13	35	0.00620
+Palleronia sp. LCG004	3079304	S	16	10	26	0.00461
+Roseicyclus elongatus	159346	S	11	32	43	0.00762
+Alloyangia sp. H15	3029062	S	17	30	47	0.00833
+Celeribacter indicus	1208324	S	12	76	88	0.01560
+Pseudosulfitobacter pseudonitzschiae	1402135	S	17	65	82	0.01454
+Tateyamaria sp. SN6-1	3092148	S	10	6	16	0.00284
+Mameliella alba	561184	S	12	30	42	0.00745
+Dinoroseobacter shibae	215813	S	20	87	107	0.01897
+Actibacterium sp. EMB200-NS6	1609966	S	17	95	112	0.01985
+Marinovum algicola	42444	S	14	26	40	0.00709
+Marivita sp.	2003365	S	11	7	18	0.00319
+Rhodobacter xanthinilyticus	1850250	S	15	107	122	0.02163
+Rhodobacter sp. CZR27	2033869	S	14	24	38	0.00674
+Rhodobacter capsulatus	1061	S	13	22	35	0.00620
+Porphyrobacter sp. CACIAM 03H1	2003315	S	54	110	164	0.02907
+Porphyrobacter sp. HT-58-2	2023229	S	50	74	124	0.02198
+Porphyrobacter sp. ULC335	2854260	S	48	53	101	0.01790
+Porphyrobacter sp. YT40	2547601	S	47	188	235	0.04166
+Porphyrobacter sp. LM 6	1896196	S	39	88	127	0.02251
+Erythrobacter sp.	1042	S	68	148	216	0.03829
+Erythrobacter sp. BLCC-B19	3025315	S	43	55	98	0.01737
+Erythrobacter sp. HL-111	1798193	S	16	18	34	0.00603
+Erythrobacter neustonensis	1112	S	25	31	56	0.00993
+Erythrobacter litoralis	39960	S	13	20	33	0.00585
+Croceicoccus marinus	450378	S	19	42	61	0.01081
+Sphingopyxis macrogoltabida	33050	S	11	84	95	0.01684
+Blastomonas sp.	1909299	S	10	41	51	0.00904
+Stappia sp.	1870903	S	14	122	136	0.02411
+Roseococcus microcysteis	2771361	S	70	89	159	0.02819
+Sediminicoccus rosea	1225128	S	12	16	28	0.00496
+Oceanicaulis sp.	1924941	S	12	17	29	0.00514
+Orrella daihaiensis	2782176	S	44	72	116	0.02056
+Halomonas sp. JS92-SW72	2306583	S	18	59	77	0.01365
+Homo sapiens	9606	S	289	41	330	0.05850
