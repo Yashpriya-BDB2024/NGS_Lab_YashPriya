@@ -1,0 +1,99 @@
+### HiC analysis ###
+
+# Goal: Map the three-dimensional architecture of the genome to understand how chromatin folding regulates gene function.
+
+# Create sub-directories 
+mkdir HiC_data_analysis
+mkdir 1_Reference 2_Raw_data 3_Preprocessing 4_juicer 5_HiC_file
+
+# File needed: Paired-end data (e.g. - SRR1658811.fastq.gz) in 1_Raw_data folder; 
+hg38.fa and hg38.fa.fai - in 1_Reference folder; generate_restriction_sites.py 
+
+# Preprocessing
+cd 3_Preprocessing
+fastqc *.gz -o .
+trim_galore --paired --fastqc SRR1658811_1.fastq.gz SRR1658811_2.fastq.gz -o .
+gunzip SRR1658811_1_val_1.fq.gz
+gunzip SRR1658811_2_val_2.fq.gz
+
+# Rename the .val files now 
+mv SRR1658811_1_val_1.fq SRR1658811_R1.fastq
+mv SRR1658811_2_val_2.fq SRR1658811_R2.fastq
+
+# Prepare reference genome & restriction sites (generates hg38_MboI_sites.txt)
+cd 1_Reference
+bwa index hg38.fa
+samtools faidx hg38.fa
+cut -f1,2 hg38.fa.fai > hg38.chrom.sizes
+python3 generate_restriction_sites.py hg38.fa
+
+# Generate .hic file using juicer.sh file
+
+cd 4_juicer
+# Move those R1.fastq and R2.fastq files into this folder.
+# Note: In juicer.sh file - edit the following -
+# read1str = "_R1"
+# read2str = "_R2"
+# Also, change 729th line (export IBM_JAVA_OPTIONS = "Xmx4g -XgCthreads1") and 730th line (export _JAVA_OPTIONS = "-Xmx4g -Xms4g")
+
+bash /home/ibab/NGS_Lab/ngs_softwares/juicer/scripts/common/juicer.sh -D /home/ibab/NGS_Lab/ngs_softwares/juicer -d /home/ibab/NGS/....../ HiC_data_analysis -g hg38 -s MboI -p /home/ibab/NGS/....../1_Reference/hg38.chrom.sizes -y /home/ibab/NGS/......./1_Reference/hg38_MboI_sites.txt -z /home/ibab/NGS/....../1_Reference/hg38.fa -t 2
+
+
+# Validate the generated Hi-C file (gives contact map details - calculated for diff. base-pair resolutions like 25Mb, 100000 bp, 5000 bp, etc.) 
+
+cd 5_HiC_file
+# Move the generated .hic file from 4_juicer folder to this folder.
+# Or, ma'am can give the .hic file (already filtered for Q>30).
+
+java -Xmx4g -jar /home/ibab/NGS_Lab/ngs_softwares /juicer/scripts/common/juicer_tools.jar validate <.hic file name>
+
+# Output of above command: tells the min. & max. resolution
+
+
+# Detect TADs for chr1
+
+# The -r flag specified the resolution, and we used different bp resolutions to extract TADs (100000, 25000, 10000 and 5000).
+
+java -Xmx4g -jar /home/ibab/NGS_Lab/ngs_softwares/juicer/scripts/common/juicer_tools.jar arrowhead -c chr1 -m <min. resolution> -r 10000 -k KR <.hic file name> /home/ibab/NGS/HiC_data_analysis/tads_genome_wide
+
+# Output file: .bedpe (this is converted to .bed using awk)
+
+awk 'NR>1 {print $1"\t"$2"\t"$6"\tTAD_"NR-1"\t1000\t."}' <.bedpe file name> | tail -n +2 > /home/ibab/NGS/....../tads_genome_wide/tad_domains_10Kb.bed
+
+# Repeat the same for other 'r' also.
+# Now count total TADs detected in each 'r' case.
+
+grep -v "^#" tad_domains_10Kb.bed
+
+# Note: Since the HiC file had the maximum resolution of 5000 bp, we cannot use it to identify loops. For this, the HiC file has to contain contact data at 1000 bp resolution.
+
+
+# Visualization of Hi-C files in the JUICER tool
+
+java -jar Juicebox_1.11.08.jar
+
+# Contact map details for all chromosomes -
+# Click File ---- Open --- Select ---- Local ---- choose generated .hic file ---- set resolution (BP) as maximum value (here, 5000 bp) ---- colour range (4517)
+
+# For a particular chr. let's say 5 (intrachromosomal level)
+# Select chr. 5 in both X & Y options ---- refresh ---- will zoom in on that chr.
+
+
+# To view the TAD information (.bed)
+
+# Show ---- Show Annotation Panel ---- 1D Annotations ---- Add Local ----- select .bed file that was created earlier ----- ensure to select that chr. only from which TAD was extracted ---- set resolution as 100KB
+
+
+# To visualize .bedpe files for multiple resolutions used earlier
+
+# Show ----- Annotations ------ 2D Annotations ----- Add Local ----- Select the lets's say 10000_blocks.bedpe file ---- set chr. which was used ---- also set resolution as 100KB
+
+
+# To visualize the eigenvector data data (to identify A and B compartments) by selecting available features like eigenvectors and coverage normalizations in the 1D Annotations panel.
+# Depending on the chromosome size, we had to choose a resolution where the eigenvector values for the chromosome data were visible. This visualization explained the heterochromatin and euchromatin info.
+
+
+
+
+
+

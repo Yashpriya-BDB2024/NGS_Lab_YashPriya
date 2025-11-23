@@ -1,0 +1,105 @@
+### Metagenomics Analysis ###
+
+# Create sub-directories
+mkdir Metagenomics
+cd Metagenomics
+mkdir 1_Raw_data 2_Preprocessing 3_Metagenome_Assembly 4_Metagenome_Binning 5_Binning_quality 6_taxonomic_classification
+
+# Subset the data 
+cd 1_Raw_data
+# gunzip (if .fastq.gz is given)
+
+awk -v n=100000 'NR <= n*4' ERR2143794_1.fastq > subset_1.fastq
+awk -v n=100000 'NR <= n*4' ERR2143794_2.fastq > subset_2.fastq
+
+# Preprocessing
+cd 2_Preprocessing
+fastqc /home/ibab/NGS/TEE_practice/Metagenomics/1_Raw_data/subset_*.fastq -o .
+
+trim_galore --paired --fastqc /home/ibab/NGS/TEE_practice/Metagenomics/1_Raw_data/subset_1.fastq /home/ibab/NGS/TEE_practice/Metagenomics/1_Raw_data/subset_2.fastq 
+
+# Metagenome Assembly Using metaSPAdes 
+cd 3_Metagenome_Assembly
+
+# Method-1 (With error correction)
+metaspades.py -1 /home/ibab/NGS/TEE_practice/Metagenomics/2_Preprocessing/subset_1_val_1.fq -2 /home/ibab/NGS/TEE_practice/Metagenomics/2_Preprocessing/subset_2_val_2.fq -o spades_with_error_correction
+
+# Or, method-2 (without error correction)
+metaspades.py --only-assembler -1 /home/ibab/NGS/TEE_practice/Metagenomics/2_Preprocessing/subset_1_val_1.fq -2 /home/ibab/NGS/TEE_practice/Metagenomics/2_Preprocessing/subset_2_val_2.fq -o spades_with_error_correction
+
+# Quality Analysis using MetaQUAST
+metaquast.py spades_with_error_correction/scaffolds.fasta -o spades_quast1
+
+# Or,
+metaquast.py spades_without_error_correction/scaffolds.fasta -o spades_quast2
+
+# Metagenome Binning using MaxBin2 (we cluster the assembled contigs into groups that likely belonged to the same species/genus)
+cd 4_Metagenome_Binning
+
+/home/ibab/NGS_Lab/ngs_softwares/MaxBin-2.2.7/run_MaxBin.pl -thread 2 -contig /home/ibab/NGS/TEE_practice/Metagenomics/3_Metagenome_Assembly/spades_with_error_correction/scaffolds.fasta -reads /home/ibab/NGS/TEE_practice/Metagenomics/2_Preprocessing/subset_1_val_1.fq -reads2 /home/ibab/NGS/TEE_practice/Metagenomics/2_Preprocessing/subset_2_val_2.fq -out Sample1
+
+# Similarly, we can run for without error correction also.
+
+# Quality Check with CheckM2 (to predict the completeness and contamination of the bins)
+# This command couldn't run because of database related issue.
+checkm2 predict --threads 2 --inputSample1.001.fasta Sample1.002.fasta --output-
+directory $PATH/5_Binning_quality --database_path uniref100.KO.1.dmnd
+
+# Taxonomic assignment or classification using Kraken2
+# Output: subset.kraken (read-by-read classification - unclassified), subset.report (both sp. & genus level info. - hierarchical report but doesn't tell about abundance)
+cd 6_taxonomic_classification
+
+kraken2 --db /home/ibab/NGS_Lab/ngs_softwares/Kraken2_db/ --threads 3 --paired /home/ibab/NGS/TEE_practice/Metagenomics/2_Preprocessing/subset_1_val_1.fq  /home/ibab/NGS/TEE_practice/Metagenomics/2_Preprocessing/subset_2_val_2.fq --output subset.kraken --report subset.report
+
+# Abundance Re-estimation with Bracken (Bayesian approach ; uses kraken2 report & read length)
+# Note: For checking read length (-r parameter used), look into fastqc output.
+
+# For genus -
+bracken -d /home/ibab/NGS_Lab/ngs_softwares/kraken2_db/ -i subset.report -o subset_genera.bracken -r 250 -l G
+# For species -
+bracken -d /home/ibab/NGS_Lab/ngs_softwares/kraken2_db/ -i subset.report -o subset_species.bracken -r 250 -l S
+
+# Downstream analysis
+
+# Files needed: diversity_analysis.R, stacked_bar_plot_for_all.R, stacked_bar_plots_after_filteration.R, stacked_barplot_top_20_genus.R
+
+# To check % of each bacterial data in sample -
+
+# 1. stacked bar plot for both genus & sp. level data for all data 
+
+# Change the input file name as "subset_species.bracken" in "stacked_bar_plot_for_all.R" file. 
+# Also, to get sp. name as well in plot, in the above .R file - mutate(species=word(name,1,2))
+# Similarly, do for genus also - change the input file name.
+# To see the barplot, width can be changed from 10 to 15.
+
+R
+Rscript stacked_bar_plot_for_all.R
+# Y-axis: Relative abundance (%) , X-axis: sample ID, legends: genus/species
+
+# 2. stacked bar plot for both genus & sp. level data for only the top 20 
+
+# Make necessary changes in .R file as above.
+Rscript stacked_barplot_top_20_genus.R
+# Similarly for top 20 species as well.
+
+# Diversity analysis -
+
+# Tells about abundance (no. of reads belonging to each sp. in a sample or in other words, % of reads aligned), richness (no. of diff. sp. / taxa in a sample) and relative abundance (sp. reads/ total reads)
+
+# alpha diversity: within samples/sp., beta diversity: b/w samples/sp.
+
+Rscript diversity_analysis.R
+
+
+
+
+
+
+
+
+
+
+
+
+
+
